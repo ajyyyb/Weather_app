@@ -29,10 +29,11 @@ assets/                         Lottie animations (sunny, cloud, rain, thunder)
 ## Run it
 
 1. Get a free API key at [openweathermap.org](https://openweathermap.org/api).
-2. Put it into `WeatherService(apiKey: ...)` in `lib/pages/weather_page.dart`. Do not commit a real key to a public repository.
-3. Run:
+2. Pass it when you start the app. The key is not kept in the code:
 
 ```bash
 flutter pub get
-flutter run
+flutter run --dart-define=OPENWEATHER_API_KEY=your_key
 ```
+
+Without the key the requests are refused and the app says the city was not found.

@@ -9,7 +9,9 @@ class WeatherPage extends StatefulWidget {
 }
 
 class _WeatherPageState extends State<WeatherPage> {
-  final _weatherService = WeatherService(apiKey: '1d609cc51843054a1a45a40ebc3ed7a3');
+  final _weatherService = WeatherService(
+    apiKey: const String.fromEnvironment('OPENWEATHER_API_KEY'),
+  );
   final _cityController = TextEditingController();
   Weather? _weather;
 
